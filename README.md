@@ -1,4 +1,5 @@
-# 不動産の口コミサイト
+# Speee-12days-intern
+# 不動産の口コミサイト：サーテイン
 ![image](https://user-images.githubusercontent.com/70557787/189520007-71f67519-e1f1-412c-951d-328d5a6cf21d.png)
 
 このプロダクトは、株式会社Speee 12daysインターンで制作したものです。<br>
