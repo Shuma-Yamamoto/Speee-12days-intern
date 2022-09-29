@@ -1,76 +1,62 @@
-# Speee-12days-intern
-# 不動産の口コミサイト：サーテイン
-![image](https://user-images.githubusercontent.com/70557787/189520007-71f67519-e1f1-412c-951d-328d5a6cf21d.png)
+# Certain（サーテイン）
 
-このプロダクトは、株式会社Speee 12daysインターンで制作したものです。<br>
-12日間のうち、最初の3日間が開発計画フェーズで、残りの9日間が開発フェーズでした。<br>
-開発は学生4人のチームで行い、これを主に1人のメンターがサポートする形です。
+<img src="https://user-images.githubusercontent.com/70557787/192918908-c8a54902-5674-47bd-8564-b1b8bb2bdaa4.png">
 
-# 開発計画
-## 現状
-不動産取引を経験したユーザの体験談が、これから不動産取引をしようと考えているユーザにあまり届いていない。<br>
-したがって、不動産会社を選ぶ際の基準を持つことができず、不安を抱えたまま取引せざるを得ない状況にある。
+## 概要
+[株式会社Speee](https://speee.jp/)の12daysインターンで制作。4人1組のチーム開発。<br>
+不動産会社の口コミを閲覧し、査定依頼を出すことができるサイト。<br>
+制作期間：12日間（2022/8/15～30）
+<hr>
 
-## 目指すべき姿
-不動産取引を経験したユーザの体験談が、これから不動産取引をしようと考えているユーザに届く。
-結果として、ユーザは不動産会社を選ぶ際の基準を持つことができ、安心して取引をすることができる。
+## 制作の動機
+不動産売却を行うにあたり、「どの不動産会社と取引するべきか」を判断するための情報は、あまりオープンになっていない。<br>
+したがって、顧客は「とりあえず大手の不動産会社なら安心だろう」といった理由で不動産会社を選択せざるを得ない状況になっている、というのが現状。<br>
 
-## 上記を踏まえたうえでの開発計画
-![image](https://user-images.githubusercontent.com/70557787/189520654-f2632d7f-120d-4ed0-ab6f-696332df93e8.png)
+このとき、実際に取引を体験したユーザの口コミ閲覧サイトがあれば、上記の現状を打破し、顧客が安心して不動産会社と取引できるようになるのではないかと考えたため、制作するに至った。
+<hr><br>
 
-# 開発の達成度
-![image](https://user-images.githubusercontent.com/70557787/189520700-46a5f603-053f-4185-99d5-121c8a849fc7.png)
+## 技術スタック
+- Ruby on Rails
+- Rubocop
+- RSpec
+- docker
+- AWS
+- GitHub Actions
+<hr>
 
-# 開発の振り返り
-![image](https://user-images.githubusercontent.com/70557787/189520723-6402f17b-d138-4f76-a73a-1620620e121f.png)
+## 機能
+- 不動産会社の店舗情報の閲覧機能
+- 不動産会社の店舗の口コミ閲覧機能
+- 不動産会社への査定依頼機能（外部API利用）
+<hr>
 
-# 技術面で工夫したこと
-ユーザが不動産会社に査定依頼をするための「査定依頼フォーム」ページの作成において、ユーザフレンドリーな画面を意識した。<br>
-例えば、バックエンドで実装した入力フォームのバリデーションに通るように、入力項目の横に注意書きをしたり、必須項目には「必須」マークを付けたり、バリデーションに通らなかった場合はエラーメッセージを表示（ja.ymlファイルでデフォルトでは英語の文章を日本語化）したりなど。
+## 担当箇所
+- 査定依頼ページの入力フォーム
+- CSS
+<img src="https://user-images.githubusercontent.com/70557787/192924866-f7b9e6ed-6d91-47b4-9657-245b9d391539.png">
+<img src="https://user-images.githubusercontent.com/70557787/192924963-af203b2e-6d46-4907-89a9-df495b543e5e.png">
+<hr><br>
 
-# プロダクトの動かし方
+## 苦労した点
+開発の計画が予定通りに進まなかった点。<br>
+この点について、予定通りに進まない原因は以下にあると考えた。
 
-## 環境構築
+- どこまで開発し切るのかが明確になっていない
+- 全体の進捗度合いを把握できていない
+- チーム内のコミュニケーションにおいて解釈のズレが生じている
+<br>
 
-``` bash
-docker-compose build
-docker-compose run --rm app yarn install --check-files
-docker-compose run --rm app bin/setup
-```
+上記を踏まえ、チームで以下のルールを定めた。
 
-## サーバー起動
+- 開発のゴールを明確にし、タスクをGitHubのProjectsでIssueとして管理する
+- 1時間に1回、各人の進捗度合いをチーム内で共有し、ゴールとの差分から必要に応じてスケジュールの微調整を行う
+- コミュニケーションにおいて抽象的な表現を使用することを避け、少しでも疑問を持ったら双方の認識に相違がないか確認する
+<br>
 
-``` bash
-docker-compose up
-open http://localhost:13000
-```
+上記のルールを定めた結果、メンバー全員が「いま自分が何をするべきか」が分かっている状態で開発に取り組むことができ、チーム内の意思疎通もスムーズになり、開発の計画が予定通りに進むようになった。<br>
 
-### ローカルで起動する場合
-``` bash
-docker compose up db
-rails s
-open http://localhost:3000/
-```
+以上は、自分から積極的にチームに提案・働きかけを行ったため、苦労した点であるとともに、適切なチームマネジメントができたことから強いやりがいも感じられた。
+<hr>
 
-## テストの実行
-
-``` bash
-docker-compose run --rm app bin/rails test
-```
-
-## Rubocop の実行
-
-``` bash
-docker-compose run --rm app rubocop
-```
-
-## サーバへのデプロイ
-
-0. (初回のみ) `aws ecs run-task --cluster internship-aug2022-2 --task-definition internship-aug2022-2-db-create --launch-type FARGATE --network-configuration '{"awsvpcConfiguration":{"subnets":["subnet-0334f01a7f2e84910","subnet-06e60f8f517606654","subnet-0df45f1bdece2446d"],"securityGroups": ["sg-0ee03f05942978041"],"assignPublicIp":"ENABLED"}}' --count 1` で `rails db:create` を本番環境のDBに適用し、この Rails アプリが使用する MySQL のデータベースを作成する。
-1. [GitHub Actions タブの deploy ワークフロー](https://github.com/speee/hr-eng-internship-2022-1st-team-2/actions) に移動
-2. `This workflow has a workflow_dispatch event trigger.` の右側にある `Run Workflow` ボタンをクリック
-3. `Use workflow from` のセレクトボックスからデプロイ対象のブランチを選択
-4. `Run Workflow` ボタンをクリック
-
-## ステージング
-https://aug2022-2.intern.speee.in
+## 開発のふりかえり
+<img src="https://user-images.githubusercontent.com/70557787/189520723-6402f17b-d138-4f76-a73a-1620620e121f.png">
