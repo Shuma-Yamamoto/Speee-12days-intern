@@ -17,6 +17,7 @@
 
 ## 技術スタック
 - Ruby on Rails
+- Bootstrap 5
 - Rubocop
 - RSpec
 - docker
